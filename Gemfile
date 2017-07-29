@@ -30,7 +30,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
 gem 'rspec-rails'
 
-gem 'email_address'
+gem 'validates_formatting_of'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
