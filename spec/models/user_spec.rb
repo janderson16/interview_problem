@@ -5,7 +5,7 @@ describe User do
     user = User.create(email: "john_doe@mail.com",
                        first_name: "John",
                        last_name: "Doe",
-                       ss: "123-45-6789"
+                       ssn: "123-45-6789"
                        )
     expect(user).to be_valid
   end
@@ -18,11 +18,11 @@ describe User do
     expect(user).to_not be_valid
   end
 
-  it "user cannot be created without valid email address" do
+  it "user cannot be created with invalid email address" do
     user = User.create(email: "john_doe@mail",
                        first_name: "John",
                        last_name: "Doe",
-                       ss: "123-45-6789"
+                       ssn: "123-45-6789"
                        )
 
     expect(user).to_not be_valid
