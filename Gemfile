@@ -51,6 +51,5 @@ group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'launchy'
-
-  # gem 'simplecov', :require => false
+  gem 'simplecov', :require => false
 end

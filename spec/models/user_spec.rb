@@ -27,4 +27,14 @@ describe User do
 
     expect(user).to_not be_valid
   end
+
+  it "user cannot be created with invalid ssn" do
+    user = User.create(email: "john_doe@mail",
+                       first_name: "John",
+                       last_name: "Doe",
+                       ssn: "123-45-67890"
+                       )
+
+    expect(user).to_not be_valid
+  end
 end
