@@ -1,20 +1,29 @@
-<h1>List of Users</h1>
+<h1 class="text-center">List of Users</h1>
 <!-- users table -->
-<table class="users" border="1" width="100%" ID="Table2" style="margin: 0px;">
-  <thead>
-      <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
+<div class="users-table-padding">
+  <table class="users table table-striped" border="1" style="margin: 0px;">
+    <thead class="thead-inverse">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="users">
+      <% @users.each do |user| %>
+      <tr class="user-row user-row-<%= user.id %>" data-id="<%= user.id %>">
+        <td><p><%= user.first_name%></p></td>
+        <td><p><%= user.last_name %></a></p></td>
+        <td><p><%= user.email %></p></td>
+        <td><%= button_to "View", user_path(user), method: :get %></td>
       </tr>
-  </thead>
-  <tbody id="users">
-    <% @users.each do |user| %>
-    <tr class="user-row user-row-<%= user.id %>" data-id="<%= user.id %>">
-      <td><p><%= user.first_name%></p></td>
-      <td><p><%= user.last_name %></a></p></td>
-      <td><p><%= user.email %></p></td>
-    </tr>
-      <% end %>
-  </tbody>
-</table>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
