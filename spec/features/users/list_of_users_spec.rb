@@ -17,6 +17,7 @@ describe "can see list of users" do
 
     visit '/'
 
+
     within(".user-row-#{user_1.id}") do
       expect(page).to have_content "Ethel"
       expect(page).to have_content "Jones"

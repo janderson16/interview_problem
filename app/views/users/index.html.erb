@@ -1,6 +1,20 @@
 <h1 class="text-center">List of Users</h1>
-<!-- users table -->
 <div class="users-table-padding">
+  <!-- new user form -->
+  <div class="well well-sm">
+    <form class="" name="new-user" action="index.html" method="post">
+      <label for="first-name">First name</label>
+      <input type="text" name="user[first_name]" id="first-name" value="">
+      <label for="last-name">Last name</label>
+      <input type="text" name="user[last_name]" id="last-name" value="">
+      <label for="email">Email</label>
+      <input type="text" name="user[email]" id="email" value="">
+      <label for="ssn">Social Security Number</label>
+      <input type="text" name="user[ssn]" id="ssn" value="">
+      <button type="button" name="button" id="create-new">Create User</button>
+    </form>
+  </div>
+  <!-- users table -->
   <table class="users table table-striped" border="1" style="margin: 0px;">
     <thead class="thead-inverse">
         <tr>
@@ -12,13 +26,8 @@
     </thead>
     <tbody id="users">
       <% @users.each do |user| %>
-      <tr class="user-row user-row-<%= user.id %>" data-id="<%= user.id %>">
-        <td><p><%= user.first_name%></p></td>
-        <td><p><%= user.last_name %></a></p></td>
-        <td><p><%= user.email %></p></td>
-        <td><%= button_to "View", user_path(user), method: :get %></td>
-      </tr>
-        <% end %>
+        <%= render partial: 'user_info', locals: {user: user} %>
+      <% end %>
     </tbody>
   </table>
 </div>

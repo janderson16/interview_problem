@@ -29,8 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'rspec-rails'
-
 gem 'validates_formatting_of'
+gem 'active_model_serializers'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -52,4 +52,6 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov', :require => false
+  gem 'selenium-webdriver', '~> 2.53.4'
+  gem 'database_cleaner'
 end

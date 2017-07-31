@@ -1,0 +1,7 @@
+<!-- user-partial -->
+<tr class="user-row user-row-<%= user.id %>" data-id="<%= user.id %>">
+  <td><p><%= user.first_name%></p></td>
+  <td><p><%= user.last_name %></a></p></td>
+  <td><p><%= user.email %></p></td>
+  <td><%= button_to "View", user_path(user), method: :get %></td>
+</tr>
