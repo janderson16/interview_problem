@@ -33,13 +33,13 @@ describe Api::V1::UsersController do
     expect(user_1.first_name).to eq("Ethel")
   end
 
-  it "can create an user" do
+  it "can create a user" do
     params = {
               first_name: "Test",
               last_name: "Test",
               email: "test@mail.com",
               ssn: "123-12-6789"
-    }
+              }
     post "/api/v1/users", user: params, format: :json
     json_response = JSON.parse(response.body)
     expect(response).to be_success
@@ -47,12 +47,10 @@ describe Api::V1::UsersController do
 
   it "cannot create a user without all fields" do
     userData = {
-       user: {
               first_name: "Test",
               email: "test@mail.com",
               ssn: "123-12-6789"
               }
-    }
 
     post "/api/v1/users", user: userData, format: :json
     json_response = JSON.parse(response.body)
