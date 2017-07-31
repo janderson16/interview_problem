@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "can see list of user show page" do
+describe "can see user show page" do
   scenario "from the root" do
     user_1 = User.create!(
                           first_name: "Ethel",
@@ -15,7 +15,7 @@ describe "can see list of user show page" do
       click_on "View"
     end
 
-    expect(current_path).to eq('/users/1')
+    expect(current_path).to eq("/users/#{user_1.id}")
     expect(page).to have_content "Ethel"
     expect(page).to have_content "Jones"
     expect(page).to have_content "ethel@mail.com"

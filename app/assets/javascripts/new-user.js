@@ -2,7 +2,8 @@
 function bindListenerAndCreateUser(){
   $("#create-new").click(function(event){
     event.preventDefault();
-    createUser()
+    createUser();
+    document.forms["new-user"].reset();
   })
 }
 
